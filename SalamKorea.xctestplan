@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "20C3099E-FF09-4A7E-B2F1-6FD177BE6EFF",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SalamKorea.xcodeproj",
+      "identifier" : "36847F2C29EF399A0060430E",
+      "name" : "SalamKorea"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SalamKorea.xcodeproj",
+        "identifier" : "36847F3C29EF399A0060430E",
+        "name" : "SalamKoreaTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SalamKorea.xcodeproj",
+        "identifier" : "36847F4629EF399A0060430E",
+        "name" : "SalamKoreaUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
