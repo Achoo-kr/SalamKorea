@@ -15,6 +15,7 @@
 		36847F4E29EF399A0060430E /* SalamKoreaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36847F4D29EF399A0060430E /* SalamKoreaUITestsLaunchTests.swift */; };
 		36847F5C29EF39AC0060430E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 36847F5B29EF39AC0060430E /* ComposableArchitecture */; };
 		36847F6029EF3AD20060430E /* LoginScreenReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36847F5F29EF3AD20060430E /* LoginScreenReducerTests.swift */; };
+		36DEAB3029EF454100F2A12F /* LoginScreenFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DEAB2F29EF454100F2A12F /* LoginScreenFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		36847F5D29EF3A300060430E /* SalamKorea.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SalamKorea.xctestplan; sourceTree = "<group>"; };
 		36847F5E29EF3AD20060430E /* SalamKoreaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SalamKoreaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		36847F5F29EF3AD20060430E /* LoginScreenReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenReducerTests.swift; sourceTree = "<group>"; };
+		36DEAB2F29EF454100F2A12F /* LoginScreenFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				36847F3229EF399A0060430E /* ContentView.swift */,
 				36847F3429EF399A0060430E /* Assets.xcassets */,
 				36847F3629EF399A0060430E /* Preview Content */,
+				36DEAB2F29EF454100F2A12F /* LoginScreenFeature.swift */,
 			);
 			path = SalamKorea;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DEAB3029EF454100F2A12F /* LoginScreenFeature.swift in Sources */,
 				36847F3329EF399A0060430E /* ContentView.swift in Sources */,
 				36847F3129EF399A0060430E /* SalamKoreaApp.swift in Sources */,
 			);
