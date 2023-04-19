@@ -57,6 +57,17 @@ final class LoginScreenReducerTests: XCTestCase {
         }
     }
     
+    func test_loginButtonTapped_showsErrorWhenEmailAndPasswordAreEmpty() {
+        let store = TestStore(
+            initialState: LoginScreenFeature.State(emailText: "", passwordText: ""),
+            reducer: LoginScreenFeature()
+        )
+        
+        store.send(.onLoginButtonTapped) { state in
+            state.errorMessage = "Email and password should not be empty"
+        }
+    }
+    
     func test_onEmailTextFieldChanged_shouldResetsErrorMessageWhenEmailIsNotEmpty() {
         let store = TestStore(
             initialState: LoginScreenFeature.State(
