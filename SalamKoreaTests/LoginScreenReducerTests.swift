@@ -13,35 +13,35 @@ final class LoginScreenReducerTests: XCTestCase {
     
     func test_onEmailTextFieldChanged_shouldSaveEmailState() {
         let typedText = "choo"
-        let store = TestStore(
+        let sut = TestStore(
             initialState: LoginScreenFeature.State(),
             reducer: LoginScreenFeature()
         )
         
-        store.send(.onEmailTextFieldChanged(text: typedText)) { state in
+        sut.send(.onEmailTextFieldChanged(text: typedText)) { state in
             state.emailText = typedText
         }
     }
     
     func test_onPasswordTextFieldChanged_shouldSaveEmailState() {
         let typedText = "password"
-        let store = TestStore(
+        let sut = TestStore(
             initialState: LoginScreenFeature.State(),
             reducer: LoginScreenFeature()
         )
         
-        store.send(.onPasswordTextFieldChanged(text: typedText)) { state in
+        sut.send(.onPasswordTextFieldChanged(text: typedText)) { state in
             state.passwordText = typedText
         }
     }
     
     func test_loginButtonTapped_showsErrorWhenEmailIsEmpty() {
-        let store = TestStore(
+        let sut = TestStore(
             initialState: LoginScreenFeature.State(emailText: "", passwordText: "any-password"),
             reducer: LoginScreenFeature()
         )
         
-        store.send(.onLoginButtonTapped) { state in
+        sut.send(.onLoginButtonTapped) { state in
             state.errorMessage = "Email should not be empty"
         }
     }
@@ -58,18 +58,18 @@ final class LoginScreenReducerTests: XCTestCase {
     }
     
     func test_loginButtonTapped_showsErrorWhenEmailAndPasswordAreEmpty() {
-        let store = TestStore(
+        let sut = TestStore(
             initialState: LoginScreenFeature.State(emailText: "", passwordText: ""),
             reducer: LoginScreenFeature()
         )
         
-        store.send(.onLoginButtonTapped) { state in
+        sut.send(.onLoginButtonTapped) { state in
             state.errorMessage = "Email and password should not be empty"
         }
     }
-    
+    //SUT naming - system under testing
     func test_onEmailTextFieldChanged_shouldResetsErrorMessageWhenEmailIsNotEmpty() {
-        let store = TestStore(
+        let sut = TestStore(
             initialState: LoginScreenFeature.State(
                 emailText: "",
                 passwordText: "not empty password",
@@ -78,19 +78,19 @@ final class LoginScreenReducerTests: XCTestCase {
             reducer: LoginScreenFeature()
         )
         
-        store.send(.onEmailTextFieldChanged(text: "a")) { state in
+        sut.send(.onEmailTextFieldChanged(text: "a")) { state in
             state.emailText = "a"
             state.errorMessage = nil
         }
         
-        store.send(.onEmailTextFieldChanged(text: "")) { state in
+        sut.send(.onEmailTextFieldChanged(text: "")) { state in
             state.emailText = ""
             state.errorMessage = nil
         }
     }
     
     func test_onPasswordTextFieldChanged_shouldResetsErrorMessageWhenEmailIsNotEmpty() {
-        let store = TestStore(
+        let sut = TestStore(
             initialState: LoginScreenFeature.State(
                 emailText: "not empty email",
                 passwordText: "",
@@ -99,12 +99,12 @@ final class LoginScreenReducerTests: XCTestCase {
             reducer: LoginScreenFeature()
         )
         
-        store.send(.onPasswordTextFieldChanged(text: "a")) { state in
+        sut.send(.onPasswordTextFieldChanged(text: "a")) { state in
             state.passwordText = "a"
             state.errorMessage = nil
         }
         
-        store.send(.onPasswordTextFieldChanged(text: "")) { state in
+        sut.send(.onPasswordTextFieldChanged(text: "")) { state in
             state.passwordText = ""
             state.errorMessage = nil
         }
