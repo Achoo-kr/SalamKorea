@@ -15,8 +15,11 @@
 		36847F4E29EF399A0060430E /* SalamKoreaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36847F4D29EF399A0060430E /* SalamKoreaUITestsLaunchTests.swift */; };
 		36847F5C29EF39AC0060430E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 36847F5B29EF39AC0060430E /* ComposableArchitecture */; };
 		36847F6029EF3AD20060430E /* LoginScreenReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36847F5F29EF3AD20060430E /* LoginScreenReducerTests.swift */; };
+		36AD4EF129F0F78800330110 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AD4EF029F0F78800330110 /* XCTest.framework */; };
 		36DEAB3029EF454100F2A12F /* LoginScreenFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DEAB2F29EF454100F2A12F /* LoginScreenFeature.swift */; };
 		36DEAB3229F0249E00F2A12F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DEAB3129F0249E00F2A12F /* LoginView.swift */; };
+		36DEAB3429F0F40800F2A12F /* LoginViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DEAB3329F0F40800F2A12F /* LoginViewSnapshotTests.swift */; };
+		36DEAB3729F0F53D00F2A12F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 36DEAB3629F0F53D00F2A12F /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +52,10 @@
 		36847F5D29EF3A300060430E /* SalamKorea.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SalamKorea.xctestplan; sourceTree = "<group>"; };
 		36847F5E29EF3AD20060430E /* SalamKoreaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SalamKoreaTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		36847F5F29EF3AD20060430E /* LoginScreenReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenReducerTests.swift; sourceTree = "<group>"; };
+		36AD4EF029F0F78800330110 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		36DEAB2F29EF454100F2A12F /* LoginScreenFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenFeature.swift; sourceTree = "<group>"; };
 		36DEAB3129F0249E00F2A12F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		36DEAB3329F0F40800F2A12F /* LoginViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewSnapshotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36AD4EF129F0F78800330110 /* XCTest.framework in Frameworks */,
 				36847F5C29EF39AC0060430E /* ComposableArchitecture in Frameworks */,
+				36DEAB3729F0F53D00F2A12F /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +94,7 @@
 				36847F4029EF399A0060430E /* SalamKoreaTests */,
 				36847F4A29EF399A0060430E /* SalamKoreaUITests */,
 				36847F2E29EF399A0060430E /* Products */,
+				36AD4EEF29F0F78800330110 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +134,7 @@
 			children = (
 				36847F5F29EF3AD20060430E /* LoginScreenReducerTests.swift */,
 				36847F5E29EF3AD20060430E /* SalamKoreaTests-Bridging-Header.h */,
+				36DEAB3329F0F40800F2A12F /* LoginViewSnapshotTests.swift */,
 			);
 			path = SalamKoreaTests;
 			sourceTree = "<group>";
@@ -137,6 +146,14 @@
 				36847F4D29EF399A0060430E /* SalamKoreaUITestsLaunchTests.swift */,
 			);
 			path = SalamKoreaUITests;
+			sourceTree = "<group>";
+		};
+		36AD4EEF29F0F78800330110 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36AD4EF029F0F78800330110 /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +174,7 @@
 			name = SalamKorea;
 			packageProductDependencies = (
 				36847F5B29EF39AC0060430E /* ComposableArchitecture */,
+				36DEAB3629F0F53D00F2A12F /* SnapshotTesting */,
 			);
 			productName = SalamKorea;
 			productReference = 36847F2D29EF399A0060430E /* SalamKorea.app */;
@@ -233,6 +251,7 @@
 			mainGroup = 36847F2429EF39990060430E;
 			packageReferences = (
 				36847F5A29EF39AC0060430E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				36DEAB3529F0F53C00F2A12F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 36847F2E29EF399A0060430E /* Products */;
 			projectDirPath = "";
@@ -287,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DEAB3429F0F40800F2A12F /* LoginViewSnapshotTests.swift in Sources */,
 				36847F6029EF3AD20060430E /* LoginScreenReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +643,14 @@
 				minimumVersion = 0.52.0;
 			};
 		};
+		36DEAB3529F0F53C00F2A12F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -630,6 +658,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 36847F5A29EF39AC0060430E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		36DEAB3629F0F53D00F2A12F /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36DEAB3529F0F53C00F2A12F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
