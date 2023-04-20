@@ -14,37 +14,34 @@ import SwiftUI
 final class LoginViewSnapshotTests: XCTestCase {
     
     func test_snapshot_shouldInitialState() {
-        let store = Store(
-            initialState: LoginScreenFeature.State(),
-            reducer: LoginScreenFeature()
-        )
-        let loginView = LoginView(store: store)
-        let loginViewController = UIHostingController(rootView: loginView)
+        let sut = makeSUT(initialState: LoginScreenFeature.State())
         
-        assertSnapshot(matching: loginViewController, as: .image(on: .iPhone13))
+        assertSnapshot(matching: sut, as: .image(on: .iPhone13))
     }
     
     func test_snapshot_shouldShowEmailTextOnNonEmptyEmail() {
-        let store = Store(
-            initialState: LoginScreenFeature.State(emailText: "any-email@mail.com"),
-            reducer: LoginScreenFeature()
-        )
-        let loginView = LoginView(store: store)
-        let loginViewController = UIHostingController(rootView: loginView)
+        let sut = makeSUT(initialState: LoginScreenFeature.State(emailText: "any-email@mail.com"))
         
-        assertSnapshot(matching: loginViewController, as: .image(on: .iPhone13))
+        assertSnapshot(matching: sut, as: .image(on: .iPhone13))
 
     }
     
     func test_snapshot_shouldShowPasswordTextOnNonEmptyEmail() {
+        let sut = makeSUT(initialState: LoginScreenFeature.State(passwordText: "any-password"))
+        
+        assertSnapshot(matching: sut, as: .image(on: .iPhone13))
+
+    }
+    
+    //MARK: - Helpers
+    
+    private func makeSUT(initialState: LoginScreenFeature.State) -> UIViewController {
         let store = Store(
-            initialState: LoginScreenFeature.State(passwordText: "any-password"),
+            initialState: initialState,
             reducer: LoginScreenFeature()
         )
         let loginView = LoginView(store: store)
-        let loginViewController = UIHostingController(rootView: loginView)
-        
-        assertSnapshot(matching: loginViewController, as: .image(on: .iPhone13))
-
+        let sut = UIHostingController(rootView: loginView)
+        return sut
     }
 }
