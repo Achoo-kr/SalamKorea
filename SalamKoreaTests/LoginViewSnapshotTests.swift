@@ -35,4 +35,16 @@ final class LoginViewSnapshotTests: XCTestCase {
         assertSnapshot(matching: loginViewController, as: .image(on: .iPhone13))
 
     }
+    
+    func test_snapshot_shouldShowPasswordTextOnNonEmptyEmail() {
+        let store = Store(
+            initialState: LoginScreenFeature.State(passwordText: "any-password"),
+            reducer: LoginScreenFeature()
+        )
+        let loginView = LoginView(store: store)
+        let loginViewController = UIHostingController(rootView: loginView)
+        
+        assertSnapshot(matching: loginViewController, as: .image(on: .iPhone13))
+
+    }
 }
