@@ -33,6 +33,12 @@ final class LoginViewSnapshotTests: XCTestCase {
 
     }
     
+    func test_snapshot_shouldShiwErrorMessage() {
+        let sut = makeSUT(initialState: LoginScreenFeature.State(errorMessage: "any error message"))
+        
+        assertSnapshot(matching: sut, as: .image(on: .iPhone13))
+    }
+    
     //MARK: - Helpers
     
     private func makeSUT(initialState: LoginScreenFeature.State) -> UIViewController {
