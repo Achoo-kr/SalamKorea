@@ -13,9 +13,14 @@ import SwiftUI
 
 final class LoginViewSnapshotTests: XCTestCase {
     
+//    override func setUp() {
+//        super.setUp()
+//        isRecording = true
+//    }
+    
     func test_snapshot_shouldInitialState() {
         let sut = makeSUT(initialState: LoginScreenFeature.State())
-        
+
         assertSnapshot(matching: sut, as: .image(on: .iPhone13, traits:  .lightMode))
         assertSnapshot(matching: sut, as: .image(on: .iPad10_2, traits:  .darkMode))
     }
@@ -23,21 +28,22 @@ final class LoginViewSnapshotTests: XCTestCase {
     func test_snapshot_shouldShowEmailTextOnNonEmptyEmail() {
         let sut = makeSUT(initialState: LoginScreenFeature.State(emailText: "any-email@mail.com"))
         
-        assertSnapshot(matching: sut, as: .image(on: .iPhone13))
-
+        assertSnapshot(matching: sut, as: .image(on: .iPhone13, traits:  .lightMode))
+        assertSnapshot(matching: sut, as: .image(on: .iPad10_2, traits:  .darkMode))
     }
     
     func test_snapshot_shouldShowPasswordTextOnNonEmptyEmail() {
         let sut = makeSUT(initialState: LoginScreenFeature.State(passwordText: "any-password"))
         
-        assertSnapshot(matching: sut, as: .image(on: .iPhone13))
-
+        assertSnapshot(matching: sut, as: .image(on: .iPhone13, traits:  .lightMode))
+        assertSnapshot(matching: sut, as: .image(on: .iPad10_2, traits:  .darkMode))
     }
     
     func test_snapshot_shouldShiwErrorMessage() {
         let sut = makeSUT(initialState: LoginScreenFeature.State(errorMessage: "any error message"))
         
-        assertSnapshot(matching: sut, as: .image(on: .iPhone13))
+        assertSnapshot(matching: sut, as: .image(on: .iPhone13, traits:  .lightMode))
+        assertSnapshot(matching: sut, as: .image(on: .iPad10_2, traits:  .darkMode))
     }
     
     //MARK: - Helpers
